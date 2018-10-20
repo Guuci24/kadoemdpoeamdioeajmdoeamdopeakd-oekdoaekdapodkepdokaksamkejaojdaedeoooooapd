@@ -26,7 +26,6 @@ client.on('ready', () => {
   console.log(`Servers : [ " ${client.guilds.size} " ]`);
   console.log(`Users : [ " ${client.users.size} " ]`);
   console.log(`Channels : [ " ${client.channels.size} " ]`);
-  console.log('By : '+`${client.users.get("429972030092476437").username}`)
 });
 
 
