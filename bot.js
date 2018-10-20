@@ -388,7 +388,6 @@ client.on("guildMemberAdd", member => {
     welcomer.sendFile(canvas.toBuffer())
       
       
-      console.log(error)
       })
       })
       
