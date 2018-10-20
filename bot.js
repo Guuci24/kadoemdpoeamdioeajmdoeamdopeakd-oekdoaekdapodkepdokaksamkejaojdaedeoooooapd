@@ -294,10 +294,10 @@ message.channel.send({embed:embed}).then(message => message.delete(5000));
 
 //=============================== - [ Welcome ] - ===================================
 
-   const sWlc = {}
-const premium = ['396958215377780747', '', '', '']
+const sWlc = {}
+const premium = ['429972030092476437', '', '', '']
 client.on('message', message => {
-var prefix = ".";
+var prefix = "d!";
 if(message.channel.type === "dm") return;
 if(message.author.bot) return;
   if(!sWlc[message.guild.id]) sWlc[message.guild.id] = {
@@ -312,9 +312,6 @@ const channel = sWlc[message.guild.id].channel
     message.channel.send(`**${message.guild.name}'s channel has been changed to ${newChannel}**`);
   }
 });
- 
-
-
 client.on("guildMemberAdd", member => {
       if(!sWlc[member.guild.id]) sWlc[member.guild.id] = {
     channel: "welcome"
@@ -331,68 +328,67 @@ client.on("guildMemberAdd", member => {
         .setColor('RANDOM')
         .setThumbnail(h.avatarURL)
         .setAuthor(h.username,h.avatarURL)
-        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
-         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)      
+        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)
+         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)
          .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
-     welcomer.send({embed:heroo});          
-         
+     welcomer.send({embed:heroo});
+
       var Canvas = require('canvas')
       var jimp = require('jimp')
-      
-      const w = ['w.png'];
-      
-              let Image = Canvas.Image,
-                  canvas = new Canvas(557, 241),
-                  ctx = canvas.getContext('2d');
-  
-              fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
-                  if (err) return console.log(err)
-                  let BG = Canvas.Image;
-                  let ground = new Image;
-                  ground.src = Background;
-                  ctx.drawImage(ground, 0, 0, 540, 230);
-      
-      })
-      
-                      let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(5, -20) + ".gif" : member.user.displayAvatarURL;
-                      jimp.read(url, (err, ava) => {
-                          if (err) return console.log(err);
-                          ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
-                              if (err) return console.log(err);
-      
-                                    ctx.font = '21px kathen';
-                              ctx.fontSize = '25px';
-                              ctx.fillStyle = "#FFFFFF";
-                                ctx.fillText(member.user.username, 240, 150);
-                              
-                              //NAMEً
-                              ctx.font = '21px kathen';
-                              ctx.fontSize = '20px';
-                              ctx.fillStyle = "#FFFFFF";
-      ctx.fillText(`Welcome To ${member.guild.name}`, 240, 90);
-      
-                              //AVATARً
-                              let Avatar = Canvas.Image;
-                              let ava = new Avatar;
-                              ava.src = buf;
-                              ctx.beginPath();
-                 ctx.arc(120.8, 120.5, 112.3, 0, Math.PI*2, true);
-                   ctx.closePath();
-                   
-                                 ctx.clip();
 
-                        ctx.drawImage(ava, 7, 8, 227, 225);
-                              ctx.closePath();
+      const w = ['./w1.png'];
+ 
+      let Image = Canvas.Image,
+         canvas = new Canvas(400, 200),
+         ctx = canvas.getContext('2d');
+     fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+         if (err) return console.log(err);
+         let BG = Canvas.Image;
+         let ground = new Image;
+         ground.src = Background;
+         ctx.drawImage(ground, 0, 0, 400, 200);
+          
+      
 
-                            
+             let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(100) + ".png" : member.user.displayAvatarURL;
+             jimp.read(url, (err, ava) => {
+                 if (err) return console.log(err);
+                 ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                     if (err) return console.log(err);
+                    
+                     ctx.font = "bold 12px Arial";
+                     ctx.fontSize = '20px';
+                     ctx.fillStyle = "#f1f1f1";
+                     ctx.textAlign = "center";
+                     ctx.fillText(`Welcome To ${member.guild.name}`, 300, 130);
+                    
+                     ctx.font = "bold 12px Arial";
+                     ctx.fontSize = '20px';
+                     ctx.fillStyle = "#f1f1f1";
+                     ctx.textAlign = "center";
+                     ctx.fillText(member.user.username, 200, 150);
+
+             let Avatar = Canvas.Image;
+                           let ava = new Avatar;
+                           ava.src = buf;
+                           ctx.beginPath();
+                           ctx.arc(77, 101, 62, 0, Math.PI*2);
+                           ctx.stroke();
+                              ctx.clip();
+                              ctx.drawImage(ava, 13, 38, 128, 126);  
+                      
+            
+         
     welcomer.sendFile(canvas.toBuffer())
-      
-      
+
+
+
       })
       })
-      
+
       }
-      });
+     )}
+
 
 
   
