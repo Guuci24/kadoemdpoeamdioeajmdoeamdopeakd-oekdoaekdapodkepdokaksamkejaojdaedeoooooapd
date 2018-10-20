@@ -1758,4 +1758,4 @@ client.on('roleCreate', role => {
   }, 1000);
 });
 
-client.login('NDY4Nzg3ODE1MDYxMjU4MjQw.DoKMzA.5z5Ha7wrUbyhiNC-YLznsWxrPiw');
+client.login(process.env.BOT_TOKEN)
